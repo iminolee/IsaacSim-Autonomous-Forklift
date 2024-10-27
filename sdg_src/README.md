@@ -24,7 +24,7 @@ cd ./sdg_src
 
 ### 2. Annotated Classes
 
-<div style="text-align:center"><img src="examples/classes.png" width="70%" /></div>
+<div align="center"><img src="examples/classes.png" width="70%" /></div>
 
 <div align="center">
 

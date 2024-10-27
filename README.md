@@ -1,7 +1,7 @@
 # IsaacSim-Autonomous-Forklift
 
 <p align="center">
-  <b><i>Minho Lee; Jungwoo Lee; Wonhyeok Jeong; Jehwan Jeon; Chohui Shin</i></b>
+  <b><i>Minho Lee; Jiyun Lee; Jungwoo Lee; Wonhyeok Jeong; Chohui Shin; Jehwan Jeon</i></b>
 </p>
 
 <p align="center">
