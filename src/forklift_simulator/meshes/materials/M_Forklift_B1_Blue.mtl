@@ -1,0 +1,60 @@
+newmtl forklift_body
+map_Kd materials/T_Forklift_B1_Albedo.1001.png   # Albedo
+map_Bump materials/T_Forklift_B1_Normal.1001.png  # Normal map
+map_Ks materials/T_Forklift_B1_ORM.1001.png       # ORM map
+map_Roughness materials/T_Forklift_B1_Rough.1001.png  # Roughness map
+
+newmtl forklift_decal
+map_Kd materials/T_Forklift_B1_Decal_Albedo.png  # Decal Albedo
+map_Bump materials/T_Forklift_B1_Decal_Normal.png  # Decal Normal
+map_Ks materials/T_Forklift_B1_Decal_ORM.png      # Decal ORM
+map_Roughness materials/T_Forklift_B1_Decal_Rough.png  # Decal Roughness
+map_Opacity materials/T_Forklift_B1_Decal_Opacity.png  # Decal Opacity
+
+newmtl forklift_glass
+map_Kd materials/T_Forklift_B1_Glass_Albedo.png  # Glass Albedo
+map_Bump materials/T_Forklift_B1_Glass_Normal.png  # Glass Normal
+map_Ks materials/T_Forklift_B1_Glass_ORM.png     # Glass ORM
+map_Emission materials/T_Forklift_B1_Glass_Emissive.png  # Glass Emissive
+
+newmtl forklift_wheel
+map_Kd materials/T_Forklift_B1_Albedo.1002.png   # Wheel Albedo
+map_Bump materials/T_Forklift_B1_Normal.1002.png  # Wheel Normal
+map_Ks materials/T_Forklift_B1_ORM.1002.png       # Wheel ORM
+map_Roughness materials/T_Forklift_B1_Rough.1002.png  # Wheel Roughness
+
+newmtl forklift_body_secondary
+map_Kd materials/T_Forklift_B1_Albedo.1003.png   # Secondary Body Albedo
+map_Bump materials/T_Forklift_B1_Normal.1003.png  # Secondary Body Normal
+map_Ks materials/T_Forklift_B1_ORM.1003.png       # Secondary Body ORM
+map_Roughness materials/T_Forklift_B1_Rough.1003.png  # Secondary Body Roughness
+
+newmtl forklift_back_wheel
+map_Kd materials/T_Forklift_B1_Albedo.1004.png   # Back Wheel Albedo
+map_Bump materials/T_Forklift_B1_Normal.1004.png  # Back Wheel Normal
+map_Ks materials/T_Forklift_B1_ORM.1004.png       # Back Wheel ORM
+map_Roughness materials/T_Forklift_B1_Rough.1004.png  # Back Wheel Roughness
+
+newmtl forklift_body_1005
+map_Kd materials/T_Forklift_B1_Albedo.1005.png   # Albedo
+map_Bump materials/T_Forklift_B1_Normal.1005.png  # Normal map
+map_Ks materials/T_Forklift_B1_ORM.1005.png       # ORM map
+map_Roughness materials/T_Forklift_B1_Rough.1005.png  # Roughness map
+
+newmtl forklift_body_1006
+map_Kd materials/T_Forklift_B1_Albedo.1006.png   # Albedo
+map_Bump materials/T_Forklift_B1_Normal.1006.png  # Normal map
+map_Ks materials/T_Forklift_B1_ORM.1006.png       # ORM map
+map_Roughness materials/T_Forklift_B1_Rough.1006.png  # Roughness map
+
+newmtl forklift_body_1007
+map_Kd materials/T_Forklift_B1_Albedo.1007.png   # Albedo
+map_Bump materials/T_Forklift_B1_Normal.1007.png  # Normal map
+map_Ks materials/T_Forklift_B1_ORM.1007.png       # ORM map
+map_Roughness materials/T_Forklift_B1_Rough.1007.png  # Roughness map
+
+newmtl forklift_body_1008
+map_Kd materials/T_Forklift_B1_Albedo.1008.png   # Albedo
+map_Bump materials/T_Forklift_B1_Normal.1008.png  # Normal map
+map_Ks materials/T_Forklift_B1_ORM.1008.png       # ORM map
+map_Roughness materials/T_Forklift_B1_Rough.1008.png  # Roughness map

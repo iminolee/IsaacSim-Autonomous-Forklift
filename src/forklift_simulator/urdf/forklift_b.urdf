@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<robot name="forklift_b">
+  <joint name="back_left_roller" type="continuous">
+    <origin xyz="-0.7175298 0.499 0.0782947" rpy="0. 0. -1.5707964"/>
+    <parent link="base_link"/>
+    <child link="roller_back_left"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+
+  <joint name="back_right_roller" type="continuous">
+    <origin xyz="-0.7175298 -0.4936301 0.0782947" rpy="0. 0. -1.5707964"/>
+    <parent link="base_link"/>
+    <child link="roller_back_right"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+
+  <joint name="front_left_roller" type="continuous">
+    <origin xyz="-0.91012 0.499 0.0782944" rpy="0. 0. -1.5707964"/>
+    <parent link="base_link"/>
+    <child link="roller_front_left"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+
+  <joint name="front_right_roller" type="continuous">
+    <origin xyz="-0.91012 -0.4936301 0.0782947" rpy="0. 0. -1.5707964"/>
+    <parent link="base_link"/>
+    <child link="roller_front_right"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+
+  <joint name="back_wheel_drive" type="continuous">
+    <origin xyz="0.07109 0.0023811 -0.1977193" rpy="0. 0. 0."/>
+    <parent link="forklift_b_back_wheel_swivel"/>
+    <child link="back_wheel"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+
+  <joint name="back_wheel_joints_back_wheel_swivel" type="revolute">
+    <origin xyz="0.5775399 0.07873 0.3357546" rpy="0. 0. -1.5707964"/>
+    <parent link="base_link"/>
+    <child link="forklift_b_back_wheel_swivel"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-1.0471976" upper="1.0471976" effort="123" velocity="1.0"/>
+    <dynamics damping="0.1" friction="0.05"/>
+  </joint>
+
+  <joint name="lift_joint" type="prismatic">
+    <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+    <parent link="base_link"/>
+    <child link="lift"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-0.15" upper="2." effort="123" velocity="1.0"/>
+    <dynamics damping="0.05" friction="0.02"/>
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <mass value="50.0"/>
+      <origin xyz="0 0 0"/> 
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/> 
+    </inertial>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_RightChainWheel_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_CenterChain_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_LeftChainWheel_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_RightHose_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_LeftHose_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_HoseWheel_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_CenterChainWheel_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_OperatorCabTopWheels_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079458" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_OperatorCabBotWheels_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079458" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_LiftBotWheels_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_LiftTopWheels_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_MastTopWheels_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079458" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_MastBottomWheels_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_CenterHydralicLift_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_HydraulicSystem_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_LeftChain_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_RightChain_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.511519 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_Body_B01_01.obj" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_BodyDecal_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.5115191 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_BodyGlass_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.511519 0.0004539 -0.0079459" rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_Body_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <soft_cfm>0.01</soft_cfm>
+            <soft_erp>0.8</soft_erp>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+    <dynamics damping="0.2" friction="0.1"/>
+  </link>
+
+  <link name="back_wheel">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0"/> 
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/> 
+    </inertial>
+    <visual>
+      <origin xyz="-0.0080899 -0.0684045 -0.1639691" rpy="0. 0. -0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_BackWheel_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.015 -0.000001 -0. " rpy="0. 0. -0."/>
+      <geometry>
+        <sphere radius="0.16"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.015 -0.000001 -0. " rpy="0. 0. -0."/>
+      <geometry>
+        <sphere radius="0.16"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="forklift_b_back_wheel_swivel">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0"/> 
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/> 
+    </inertial>
+    <visual>
+      <origin xyz="0.0782744 -0.0660223 -0.3616884" rpy="0. 0. -0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_BackWheelbase_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0782744 -0.0660223 -0.3616884" rpy="0. 0. -0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_BackWheelbase_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lift">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0"/> 
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/> 
+    </inertial>
+    <visual>
+      <origin xyz="-0.0004539 0.511519 -0.0079459" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_Lift_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="fork">
+        <texture filename="package://forklift_simulator/meshes/materials/T_Forklift_B1_Albedo.1003.png"/>
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.0004539 0.5115191 -0.0079459" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_OperatorCabGlass_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.0004539 0.5115191 -0.0079459" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_OperatorCab_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.0004539 0.5115191 -0.0079459" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_OperatorCabDecal_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.0004539 0.511519 -0.0079458" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_OperatorCabPedal_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0004539 0.5115191 -0.0079459" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_OperatorCab_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="roller_back_left">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0"/> 
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/> 
+    </inertial>
+    <visual>
+      <origin xyz="-0.4994511 1.2290528 -0.0862405" rpy="0. 0. -0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_LeadWheelsBackLeft_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. -0.0000002 -0. " rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.08" length="0.08"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. -0.0000002 -0. " rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.08" length="0.08"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="roller_back_right">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0"/> 
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/> 
+    </inertial>
+    <visual>
+      <origin xyz="0.4931741 1.2290528 -0.0862405" rpy="0. 0. -0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_LeadWheelsBackRight_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.0000001 -0.0000002 -0. " rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.08" length="0.08"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0000001 -0.0000002 -0. " rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.08" length="0.08"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="roller_front_left">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0"/> 
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/> 
+    </inertial>
+    <visual>
+      <origin xyz="-0.4994511 1.421635 -0.0862405" rpy="0. 0. -0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_LeadWheelsFrontLeft_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.08" length="0.08"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.08" length="0.08"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="roller_front_right">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0"/> 
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/> 
+    </inertial>
+    <visual>
+      <origin xyz="0.4931741 1.421635 -0.0862405" rpy="0. 0. -0."/>
+      <geometry>
+        <mesh filename="package://forklift_simulator/meshes/SM_Forklift_LeadWheelsFrontRight_B01_01.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.0000001 0. -0. " rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.08" length="0.08"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0000001 0. -0. " rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.08" length="0.08"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+        <legacyMode>false</legacyMode>
+        <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <leftJoint>back_wheel_joints_back_wheel_swivel</leftJoint>
+        <rightJoint>back_wheel_drive</rightJoint>
+      <wheelSeparation>0.32</wheelSeparation>
+      <wheelDiameter>0.18</wheelDiameter>
+      <wheelTorque>5</wheelTorque>
+        <wheelAcceleration>0</wheelAcceleration>
+        <robotNamespace>/</robotNamespace>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+        <odometrySource>world</odometrySource>
+      <odometryFrame>odom</odometryFrame>
+        <robotBaseFrame>base_link</robotBaseFrame>
+        <publishTf>1</publishTf>
+        <publishWheelTF>false</publishWheelTF>
+        <publishOdomTF>true</publishOdomTF>
+        <publishWheelJointState>false</publishWheelJointState>
+        <rosDebugLevel>Warn</rosDebugLevel>
+    </plugin>
+    <plugin name="ground_truth_odometry" filename="libgazebo_ros_p3d.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>base_pose_ground_truth</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <frameName>map</frameName>
+      <xyzOffsets>0 0 0</xyzOffsets>
+      <rpyOffsets>0 0 0</rpyOffsets>
+    </plugin>
+  </gazebo -->
+
+  <gazebo reference="forklift_body_01">
+    <material>
+      <script>
+        <uri>file://forklift_simulator/meshes/materials/</uri>
+        <name>SM_Forklift_Body_B01_01</name>
+      </script>
+    </material>
+  </gazebo>
+
+</robot>

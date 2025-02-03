@@ -1,0 +1,16 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v5.0.1937526254)
+
+newmtl M_Forklift_B1_Body
+Kd 1 1 1
+illum 1
+map_Kd ./T_Forklift_B1_Albedo.%3CUDIM%3E.png
+bump ./T_Forklift_B1_Normal.%3CUDIM%3E.png
+map_bump ./T_Forklift_B1_Normal.%3CUDIM%3E.png
+
+newmtl M_Forklift_B1_Blue
+Kd 0.0643678308 0.322517991 1
+illum 1
+map_Kd ./T_Forklift_B1_Albedo.%3CUDIM%3E.png
+bump ./T_Forklift_B1_Normal.%3CUDIM%3E.png
+map_bump ./T_Forklift_B1_Normal.%3CUDIM%3E.png

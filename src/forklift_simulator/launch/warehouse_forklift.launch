@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find forklift_simulator)/models"/>
+  <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find forklift_simulator)/models"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find forklift_simulator)/worlds/warehouse.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="gui" value="true"/> 
+  </include>
+
+  <!-- params -->
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0.3"/>  
+
+  <node pkg="gazebo_ros" type="spawn_model" name="urdf" args="-urdf -model forklift_b -x $(arg x) -y $(arg y) -z $(arg z) -param robot_description" />
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find forklift_simulator)/urdf/forklift_b.urdf"/>
+
+</launch>

@@ -1,1 +1,7 @@
+build
+
+devel
+
 .vscode
+
+.catkin_workspace

@@ -1,7 +1,7 @@
 # IsaacSim-Autonomous-Forklift
 
 <p align="center">
-  <b><i>Minho Lee; Jiyun Lee; Jungwoo Lee; Wonhyeok Jeong; Chohui Shin; Jehwan Jeon</i></b>
+  <b><i>Minho Lee; Jiyun Lee; Wonhyeok Jeong</i></b>
 </p>
 
 <p align="center">
@@ -11,11 +11,14 @@
 </p>
 
 ## ✨ Abstract
-This project integrates autonomous forklift control using Isaac Sim and ROS, enabling real-time monitoring and interaction. The system autonomously navigates, detects pallets, and accurately docks for transport in simulated warehouse environment.
+This project integrates **Isaac Sim/Gazebo Simulation Platform** and ROS, to enable autonomous forklift control, real-time monitoring, and interaction. The system autonomously navigates, detects pallets, and precisely docks for transport within a simulated warehouse environment.
 
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img src="figures/isaac_env_v1.png" style="width:49%; height:auto; max-height:300px; margin-right:10px;"/>
+    <img src="figures/gazebo_env.png" style="width:48%; height:auto; max-height:300px;"/>
+</div>
 <p align="center">
-    <img src="figures/isaac_env_v1.png" width="47%" style="display:inline-block; margin-right:10px;"/>
-    <img src="figures/forklift.gif" width="51%" style="display:inline-block;"/>
+    <img src="figures/forklift.gif" width="99%" style="display:inline-block;"/>
 </p>
 
 ### Overview of Pretraining Datasets: Real and Synthetic
@@ -29,6 +32,7 @@ This project integrates autonomous forklift control using Isaac Sim and ROS, ena
 </div>
 
 ## 😎 TODOs
-[O] Release data preparation scripts for logistics objects detection. <br>
+[O] Release synthetic data generation scripts for logistics objects detection. <br>
+[O] Release Gazebo launch file for running the forklift model from Isaac Sim. <br>
 [X] Release standalone python scripts for IsaacSim. <br>
 [X] Release the main project code.

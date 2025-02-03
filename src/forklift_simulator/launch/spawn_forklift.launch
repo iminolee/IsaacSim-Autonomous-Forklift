@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="robot_namespace" default="/"/>
+
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0.3"/>
+
+  <arg name="urdf" default="$(find forklift_simulator)/urdf/forklift_b.urdf" />
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg urdf)" />
+
+  <group ns="$(arg robot_namespace)">
+
+    <node name="spawn_forklift_model" pkg="gazebo_ros" type="spawn_model"
+        args="-x $(arg x)
+              -y $(arg y)
+              -z $(arg z)
+              -unpause
+              -urdf
+              -param robot_description
+              -model forklift
+              -robot_namespace $(arg robot_namespace)" />
+
+  </group>
+
+</launch>
